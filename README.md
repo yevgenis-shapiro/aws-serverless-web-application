@@ -1,14 +1,13 @@
-<img width="1680" height="945" alt="image" src="https://github.com/user-attachments/assets/65346b96-31e8-4ff6-9582-1ff8c2e803e5" />
+<img width="1680" height="945" alt="image" src="https://github.com/user-attachments/assets/f469dbd8-bf80-4a81-b74e-411b41685253" />
 
-### AWS | Mobile Backend
+
+### AWS | Web Application
 Web application example, in this example you will see a demo architecture for a serverless mobile backend. For mobile applications, users expect real-time data and a feature-rich user experience. Users also expect their data to be available when they’re offline or using a low-speed connection, and they expect data to be synchronized across devices. You have the added challenge that, with a microservice-based architecture, it takes multiple connections to retrieve distributed data vs. a single connection, which you might use in a more traditional backend. You also need to support a combination of transactional and query data. 
 
 #### 🚀 Key Components:
    - **Amazon S3 + CloudFront** 
-   - **Amazon Cognito** 
-   - **AWS AppSync**
+   - **AWS API Gateway**
    - **Amazon DynamoDB**
-   - **Amazon Elasticsearch**
    - **AWS Lambda**
    - **Amazon Pinpoint**
 
