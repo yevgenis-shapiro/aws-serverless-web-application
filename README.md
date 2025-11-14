@@ -1,4 +1,5 @@
 <img width="1680" height="945" alt="image" src="https://github.com/user-attachments/assets/eaac30d4-1911-4a83-ba99-c285c20655a4" />
+
 ### AWS | Serverless Web Application
 In this example, you will see a demo architecture for a serverless web application. You can add Amazon Cognito for authentication and add Amazon Simple Storage Service (Amazon S3) and Amazon CloudFront to quickly serve up static content from anywhere
 
