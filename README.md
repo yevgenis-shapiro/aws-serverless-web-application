@@ -14,14 +14,17 @@ In this example, you will see a demo architecture for a serverless web applicati
    - **Amazon SQS**
 
 
-Architecture Flow:
 
+⚙️ Architecture Flow:
+```
 Client authenticates via Cognito
 Requests go through CloudFront (serving S3 content)
 API Gateway receives POST requests (protected by Cognito)
 Messages are sent to SQS queue
 Lambda processes messages from the queue
 Data is stored in DynamoDB
+```
+
 
 #### Modules
 
