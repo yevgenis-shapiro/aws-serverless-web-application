@@ -1,7 +1,7 @@
 <img width="1680" height="945" alt="image" src="https://github.com/user-attachments/assets/f469dbd8-bf80-4a81-b74e-411b41685253" />
 
 
-### AWS | Web Application
+### AWS | Serverless Web Application
 In this example, you will see a demo architecture for a serverless web application. You can add Amazon Cognito for authentication and add Amazon Simple Storage Service (Amazon S3) and Amazon CloudFront to quickly serve up static content from anywhere
 
 
@@ -15,7 +15,7 @@ In this example, you will see a demo architecture for a serverless web applicati
 
 
 
-⚙️ Architecture Flow:
+📦 Architecture Flow:
 ```
 Client authenticates via Cognito
 Requests go through CloudFront (serving S3 content)
@@ -24,6 +24,7 @@ Messages are sent to SQS queue
 Lambda processes messages from the queue
 Data is stored in DynamoDB
 ```
+
 
 
 #### Modules
@@ -41,11 +42,10 @@ This setup is composed of several sub-modules that work together to create a com
 | `DynamoDB` |  NoSQL database for data storage |
 
 
+
 ⚙️ To use this:
 ```
-To use this:
-Create a schema.graphql file for your AppSync API
-Create Lambda deployment packages (stream_processor.zip and appsync_resolver.zip)
+Create a lambda_function.zip file with your Lambda code
 ```
 
 
