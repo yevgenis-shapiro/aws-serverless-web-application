@@ -2,7 +2,8 @@
 
 
 ### AWS | Web Application
-Web application example, in this example you will see a demo architecture for a serverless mobile backend. For mobile applications, users expect real-time data and a feature-rich user experience. Users also expect their data to be available when they’re offline or using a low-speed connection, and they expect data to be synchronized across devices. You have the added challenge that, with a microservice-based architecture, it takes multiple connections to retrieve distributed data vs. a single connection, which you might use in a more traditional backend. You also need to support a combination of transactional and query data. 
+In this example, you will see a demo architecture for a serverless web application. You can add Amazon Cognito for authentication and add Amazon Simple Storage Service (Amazon S3) and Amazon CloudFront to quickly serve up static content from anywhere
+
 
 #### 🚀 Key Components:
    - **Amazon S3 + CloudFront** 
