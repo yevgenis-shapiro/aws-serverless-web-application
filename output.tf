@@ -1,40 +1,36 @@
 
-output "cloudfront_domain" {
-  description = "CloudFront distribution domain name"
-  value       = aws_cloudfront_distribution.app_distribution.domain_name
+# Outputs
+output "cloudfront_url" {
+  description = "CloudFront distribution URL"
+  value       = "https://${aws_cloudfront_distribution.main.domain_name}"
 }
 
-output "s3_bucket_name" {
-  description = "S3 bucket name"
-  value       = aws_s3_bucket.app_bucket.id
+output "api_gateway_url" {
+  description = "API Gateway URL"
+  value       = "${aws_api_gateway_stage.main.invoke_url}/messages"
 }
 
 output "cognito_user_pool_id" {
   description = "Cognito User Pool ID"
-  value       = aws_cognito_user_pool.app_user_pool.id
+  value       = aws_cognito_user_pool.main.id
 }
 
 output "cognito_client_id" {
-  description = "Cognito User Pool Client ID"
-  value       = aws_cognito_user_pool_client.app_client.id
+  description = "Cognito Client ID"
+  value       = aws_cognito_user_pool_client.main.id
 }
 
-output "appsync_endpoint" {
-  description = "AppSync GraphQL endpoint"
-  value       = aws_appsync_graphql_api.app_api.uris["GRAPHQL"]
+output "s3_bucket_name" {
+  description = "S3 Bucket Name"
+  value       = aws_s3_bucket.main.id
 }
 
 output "dynamodb_table_name" {
-  description = "DynamoDB table name"
-  value       = aws_dynamodb_table.app_table.name
+  description = "DynamoDB Table Name"
+  value       = aws_dynamodb_table.main.name
 }
 
-output "elasticsearch_endpoint" {
-  description = "Elasticsearch domain endpoint"
-  value       = aws_elasticsearch_domain.app_es.endpoint
-}
-
-output "pinpoint_app_id" {
-  description = "Pinpoint application ID"
-  value       = aws_pinpoint_app.app_pinpoint.application_id
+output "sqs_queue_url" {
+  description = "SQS Queue URL"
+  value       = aws_sqs_queue.main.url
 }
