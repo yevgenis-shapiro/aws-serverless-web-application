@@ -1,13 +1,13 @@
-
-resource "aws_cognito_user_pool" "app_user_pool" {
-  name = "${var.project_name}-${var.environment}-users"
+# Cognito User Pool
+resource "aws_cognito_user_pool" "main" {
+  name = "${var.project_name}-user-pool"
 
   password_policy {
     minimum_length    = 8
     require_lowercase = true
+    require_uppercase = true
     require_numbers   = true
     require_symbols   = true
-    require_uppercase = true
   }
 
   auto_verified_attributes = ["email"]
@@ -18,22 +18,17 @@ resource "aws_cognito_user_pool" "app_user_pool" {
     required            = true
     mutable             = true
   }
-
-  tags = {
-    Name        = "${var.project_name}-user-pool"
-    Environment = var.environment
-  }
 }
 
-resource "aws_cognito_user_pool_client" "app_client" {
+resource "aws_cognito_user_pool_client" "main" {
   name         = "${var.project_name}-client"
-  user_pool_id = aws_cognito_user_pool.app_user_pool.id
+  user_pool_id = aws_cognito_user_pool.main.id
 
-  explicit_auth_flows = [
-    "ALLOW_USER_PASSWORD_AUTH",
-    "ALLOW_REFRESH_TOKEN_AUTH",
-    "ALLOW_USER_SRP_AUTH"
-  ]
-
-  generate_secret = false
+  generate_secret                      = false
+  allowed_oauth_flows_user_pool_client = true
+  allowed_oauth_flows                  = ["code", "implicit"]
+  allowed_oauth_scopes                 = ["email", "openid", "profile"]
+  callback_urls                        = ["https://${aws_cloudfront_distribution.main.domain_name}"]
+  logout_urls                          = ["https://${aws_cloudfront_distribution.main.domain_name}"]
+  supported_identity_providers         = ["COGNITO"]
 }
