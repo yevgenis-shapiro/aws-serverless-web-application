@@ -9,7 +9,8 @@ Web application example, in this example you will see a demo architecture for a 
    - **AWS API Gateway**
    - **Amazon DynamoDB**
    - **AWS Lambda**
-   - **Amazon Pinpoint**
+   - **Amazon Cognito**
+   - **Amazon SQS**
 
 
 #### Modules
@@ -18,13 +19,13 @@ This setup is composed of several sub-modules that work together to create a com
 
 | Module | Description |
 |--------|-------------|
-| `CloudFront` | Static content delivery with CDN |
-| `Cognito` | User authentication and authorization |
-| `AppSync` | GraphQL API with real-time subscriptions |
-| `DynamoDB` | NoSQL database with streams enabled |
-| `Elasticsearch` | Full-text search and analytics |
-| `Lambda` | Stream processor for DynamoDB changes and AppSync resolver for custom business logic |
-| `Pinpoint` | Analytics and user engagement |
+| `CloudFront` | CDN distribution with Origin Access Identity for secure S3 access |
+| `Cognito` | User pool for authentication with email verification |
+| `S3` | GraphQL API with real-time subscriptions |
+| `API Gateway` |REST API with Cognito authorization |
+| `SQS` | Message queue for asynchronous processing |
+| `Lambda` | Function triggered by SQS messages |
+| `DynamoDB` |  NoSQL database for data storage |
 
 
 ⚙️ To use this:
